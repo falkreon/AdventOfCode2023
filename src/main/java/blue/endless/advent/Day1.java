@@ -1,6 +1,6 @@
 package blue.endless.advent;
 
-public class Day1 {
+public class Day1 implements Day {
 	public static final String EXAMPLE1 =
 			"""
 			1abc2
@@ -65,6 +65,7 @@ public class Day1 {
 		return Integer.valueOf("" + firstDigit + lastDigit);
 	}
 	
+	@Override
 	public void a(String input) {
 		String[] lines = input.split("\n");
 		int sum = 0;
@@ -76,6 +77,7 @@ public class Day1 {
 		System.out.println("Sum: "+sum);
 	}
 	
+	@Override
 	public void b(String input) {
 		String[] lines = input.split("\n");
 		int sum = 0;
@@ -85,5 +87,20 @@ public class Day1 {
 		}
 		
 		System.out.println("Sum: "+sum);
+	}
+	
+	@Override
+	public String getSampleA() {
+		return EXAMPLE1;
+	}
+	
+	@Override
+	public String getSampleB() {
+		return EXAMPLE1;
+	}
+
+	@Override
+	public boolean sameDataForB() {
+		return true;
 	}
 }
